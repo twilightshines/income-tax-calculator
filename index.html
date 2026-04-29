@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Income Tax Calculator</h2>
+
+    <h3>Income</h3>
+    <input type="number" id="salary" placeholder="Salary">
+    <input type="number" id="otherIncome" placeholder="Other Income">
+    <input type="number" id="interestIncome" placeholder="Interest Income">
+    <input type="number" id="rentalIncome" placeholder="Rental Income">
+
+    <h3>Deductions</h3>
+    <input type="number" id="deduction80C" placeholder="80C (Max 1.5L)">
+    <input type="number" id="deduction80D" placeholder="80D">
+    <input type="number" id="deduction80G" placeholder="80G Donations">
+
+    <button onclick="calculateTax()">Calculate Tax</button>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
