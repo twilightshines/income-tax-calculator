@@ -40,7 +40,7 @@ function calculateDeductions() {
     return standard + d80C + d80D + d80G;
 }
 
-// Tax slabs
+// Tax calculation
 function computeTax(income) {
     let tax = 0;
 
@@ -60,7 +60,7 @@ function computeTax(income) {
     return tax;
 }
 
-// Rebate (Section 87A)
+// Rebate
 function applyRebate(income, tax) {
     if (income <= 500000) {
         return 0;
@@ -68,18 +68,23 @@ function applyRebate(income, tax) {
     return tax;
 }
 
-// 4% Cess
+// Cess
 function addCess(tax) {
     return tax + (tax * 0.04);
+}
+
+// Format currency
+function formatMoney(amount) {
+    return amount.toLocaleString("en-IN");
 }
 
 // Display result
 function displayResult(total, deductions, taxable, tax) {
     document.getElementById("result").innerHTML = `
-        Total Income: ₹${total.toFixed(2)} <br>
-        Deductions: ₹${deductions.toFixed(2)} <br>
-        Taxable Income: ₹${taxable.toFixed(2)} <br>
+        Total Income: ₹${formatMoney(total)} <br>
+        Deductions: ₹${formatMoney(deductions)} <br>
+        Taxable Income: ₹${formatMoney(taxable)} <br>
         <hr>
-        Tax Payable (incl. cess): ₹${tax.toFixed(2)}
+        Tax Payable (incl. cess): ₹${formatMoney(tax)}
     `;
 }
