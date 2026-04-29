@@ -13,27 +13,27 @@
     <h3>Income</h3>
 
     <label>Salary Income</label>
-    <input type="number" id="salary" placeholder="Enter salary">
+    <input type="number" id="salary" placeholder="Enter salary" min="0">
 
     <label>Other Income</label>
-    <input type="number" id="otherIncome" placeholder="Interest, freelance, etc.">
+    <input type="number" id="otherIncome" placeholder="Interest, freelance, etc." min="0">
 
     <label>Interest Income</label>
-    <input type="number" id="interestIncome" placeholder="Bank interest">
+    <input type="number" id="interestIncome" placeholder="Bank interest" min="0">
 
     <label>Rental Income</label>
-    <input type="number" id="rentalIncome" placeholder="House rent income">
+    <input type="number" id="rentalIncome" placeholder="House rent income" min="0">
 
     <h3>Deductions</h3>
 
     <label>80C Deduction</label>
-    <input type="number" id="deduction80C" placeholder="Max ₹1,50,000">
+    <input type="number" id="deduction80C" placeholder="Max ₹1,50,000" min="0">
 
     <label>80D Deduction</label>
-    <input type="number" id="deduction80D" placeholder="Medical insurance">
+    <input type="number" id="deduction80D" placeholder="Medical insurance" min="0">
 
     <label>80G Deduction</label>
-    <input type="number" id="deduction80G" placeholder="Donations">
+    <input type="number" id="deduction80G" placeholder="Donations" min="0">
 
     <button onclick="calculateTax()">Calculate Tax</button>
 

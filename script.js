@@ -16,7 +16,7 @@ function calculateTax() {
     displayResult(totalIncome, deductions, taxableIncome, tax);
 }
 
-// Get value
+// Get value safely
 function getValue(id) {
     let val = document.getElementById(id).value;
     return val ? parseFloat(val) : 0;
@@ -40,7 +40,7 @@ function calculateDeductions() {
     return standard + d80C + d80D + d80G;
 }
 
-// Tax calculation
+// Tax slabs
 function computeTax(income) {
     let tax = 0;
 
@@ -60,7 +60,7 @@ function computeTax(income) {
     return tax;
 }
 
-// Rebate
+// Rebate (Section 87A)
 function applyRebate(income, tax) {
     if (income <= 500000) {
         return 0;
@@ -68,12 +68,12 @@ function applyRebate(income, tax) {
     return tax;
 }
 
-// Cess
+// 4% Cess
 function addCess(tax) {
     return tax + (tax * 0.04);
 }
 
-// Format currency
+// Format numbers (Indian style)
 function formatMoney(amount) {
     return amount.toLocaleString("en-IN");
 }
