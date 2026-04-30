@@ -5,15 +5,16 @@
     <title>Income Tax Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <div class="nav">
-    <button onclick="showSection('calculator')">Calculator</button>
-    <button onclick="showSection('about')">About Us</button>
+    <button id="calcBtn" class="active" onclick="showSection('calculator')">Calculator</button>
+    <button id="aboutBtn" onclick="showSection('about')">About Us</button>
 </div>
 
-<!-- CALCULATOR SECTION -->
+<!-- CALCULATOR -->
 <div id="calculatorSection">
 <div class="container">
     <h2>Income Tax Calculator</h2>
@@ -24,23 +25,23 @@
     <input type="number" id="salary" placeholder="Enter salary" min="0">
 
     <label>Other Income</label>
-    <input type="number" id="otherIncome" placeholder="Interest, freelance, etc." min="0">
+    <input type="number" id="otherIncome" placeholder="Freelance, etc." min="0">
 
     <label>Interest Income</label>
     <input type="number" id="interestIncome" placeholder="Bank interest" min="0">
 
     <label>Rental Income</label>
-    <input type="number" id="rentalIncome" placeholder="House rent income" min="0">
+    <input type="number" id="rentalIncome" placeholder="House rent" min="0">
 
     <h3>Deductions</h3>
 
-    <label>80C Deduction</label>
+    <label>80C</label>
     <input type="number" id="deduction80C" placeholder="Max ₹1,50,000" min="0">
 
-    <label>80D Deduction</label>
+    <label>80D</label>
     <input type="number" id="deduction80D" placeholder="Medical insurance" min="0">
 
-    <label>80G Deduction</label>
+    <label>80G</label>
     <input type="number" id="deduction80G" placeholder="Donations" min="0">
 
     <button onclick="calculateTax()">Calculate Tax</button>
@@ -48,37 +49,57 @@
     <div id="result"></div>
 
     <p class="note">
-        *This is a simplified tax calculator based on slab system
+        *Simplified calculator based on slab system
     </p>
 </div>
 </div>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <div id="aboutSection" class="container" style="display:none;">
-    <h2>About Us</h2>
+    <h2>About This Project</h2>
 
     <p>
-        This project is a simple Income Tax Calculator developed using HTML, CSS, and JavaScript.
-        It demonstrates tax calculation using income, deductions, rebate, and cess.
+        This Income Tax Calculator is a basic web project built using HTML, CSS, and JavaScript.
+        It calculates tax using income, deductions, rebate, and cess.
     </p>
 
-    <h3>Testimonials</h3>
-    <p>“This project helped me understand real-world tax calculations.”</p>
-    <p>“Simple and user-friendly interface.”</p>
+    <h3>Team Members</h3>
 
-    <h3>Connect with Us</h3>
+    <div class="member">
+        <p><strong>Parth Sood</strong></p>
+        <p>
+            🔗 <a href="https://www.linkedin.com/in/parth-9b3121407/" target="_blank">LinkedIn</a> |
+            💻 <a href="https://github.com/" target="_blank">GitHub</a>
+        </p>
+    </div>
 
-    <p>
-        🔗 LinkedIn: 
-        <a href="https://www.linkedin.com/" target="_blank">My Profile</a>
-    </p>
+    <div class="member">
+        <p><strong>Pranav Kumar</strong></p>
+        <p>
+            🔗 <a href="#" target="_blank">LinkedIn</a> |
+            💻 <a href="#" target="_blank">GitHub</a>
+        </p>
+    </div>
 
-    <p>
-        💻 GitHub: 
-        <a href="https://github.com/" target="_blank">My Profile</a>
-    </p>
+    <h3>Guided By</h3>
+
+    <div class="member">
+        <!-- IMPORTANT: png used -->
+        <img src="teacher.png" class="teacher-img">
+
+        <p><strong>Dr. Abhishek Thakur</strong></p>
+
+        <p>
+            🔗 <a href="https://www.linkedin.com/in/dr-abhishek-thakur-00123321/" target="_blank">LinkedIn</a>
+        </p>
+    </div>
+
+    <h3>Feedback</h3>
+    <p>“Easy to use and understand.”</p>
+    <p>“Good for learning basic tax concepts.”</p>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

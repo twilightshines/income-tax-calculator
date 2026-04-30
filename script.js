@@ -16,13 +16,11 @@ function calculateTax() {
     displayResult(totalIncome, deductions, taxableIncome, tax);
 }
 
-// Get value
 function getValue(id) {
     let val = document.getElementById(id).value;
     return val ? parseFloat(val) : 0;
 }
 
-// Total income
 function calculateTotalIncome() {
     return getValue("salary") +
            getValue("otherIncome") +
@@ -30,7 +28,6 @@ function calculateTotalIncome() {
            getValue("rentalIncome");
 }
 
-// Deductions
 function calculateDeductions() {
     let standard = 50000;
     let d80C = Math.min(getValue("deduction80C"), 150000);
@@ -40,7 +37,6 @@ function calculateDeductions() {
     return standard + d80C + d80D + d80G;
 }
 
-// Tax calculation
 function computeTax(income) {
     let tax = 0;
 
@@ -60,45 +56,45 @@ function computeTax(income) {
     return tax;
 }
 
-// Rebate
 function applyRebate(income, tax) {
-    if (income <= 500000) {
-        return 0;
-    }
+    if (income <= 500000) return 0;
     return tax;
 }
 
-// Cess
 function addCess(tax) {
     return tax + (tax * 0.04);
 }
 
-// Format money
 function formatMoney(amount) {
     return amount.toLocaleString("en-IN");
 }
 
-// Display result
 function displayResult(total, deductions, taxable, tax) {
     document.getElementById("result").innerHTML = `
         Total Income: ₹${formatMoney(total)} <br>
         Deductions: ₹${formatMoney(deductions)} <br>
         Taxable Income: ₹${formatMoney(taxable)} <br>
         <hr>
-        Tax Payable (incl. cess): ₹${formatMoney(tax)}
+        Tax Payable: ₹${formatMoney(tax)}
     `;
 }
 
-// Section toggle
 function showSection(section) {
     let calc = document.getElementById("calculatorSection");
     let about = document.getElementById("aboutSection");
 
+    let calcBtn = document.getElementById("calcBtn");
+    let aboutBtn = document.getElementById("aboutBtn");
+
     if (section === "calculator") {
         calc.style.display = "block";
         about.style.display = "none";
+        calcBtn.classList.add("active");
+        aboutBtn.classList.remove("active");
     } else {
         calc.style.display = "none";
         about.style.display = "block";
+        aboutBtn.classList.add("active");
+        calcBtn.classList.remove("active");
     }
 }
