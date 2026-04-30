@@ -16,7 +16,7 @@ function calculateTax() {
     displayResult(totalIncome, deductions, taxableIncome, tax);
 }
 
-// Get value safely
+// Get value
 function getValue(id) {
     let val = document.getElementById(id).value;
     return val ? parseFloat(val) : 0;
@@ -40,7 +40,7 @@ function calculateDeductions() {
     return standard + d80C + d80D + d80G;
 }
 
-// Tax slabs
+// Tax calculation
 function computeTax(income) {
     let tax = 0;
 
@@ -60,7 +60,7 @@ function computeTax(income) {
     return tax;
 }
 
-// Rebate (Section 87A)
+// Rebate
 function applyRebate(income, tax) {
     if (income <= 500000) {
         return 0;
@@ -68,12 +68,12 @@ function applyRebate(income, tax) {
     return tax;
 }
 
-// 4% Cess
+// Cess
 function addCess(tax) {
     return tax + (tax * 0.04);
 }
 
-// Format numbers (Indian style)
+// Format money
 function formatMoney(amount) {
     return amount.toLocaleString("en-IN");
 }
@@ -87,4 +87,18 @@ function displayResult(total, deductions, taxable, tax) {
         <hr>
         Tax Payable (incl. cess): ₹${formatMoney(tax)}
     `;
+}
+
+// Section toggle
+function showSection(section) {
+    let calc = document.getElementById("calculatorSection");
+    let about = document.getElementById("aboutSection");
+
+    if (section === "calculator") {
+        calc.style.display = "block";
+        about.style.display = "none";
+    } else {
+        calc.style.display = "none";
+        about.style.display = "block";
+    }
 }

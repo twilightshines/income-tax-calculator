@@ -4,10 +4,30 @@ body {
     text-align: center;
 }
 
+/* NAVBAR */
+.nav {
+    margin-top: 20px;
+}
+
+.nav button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav button:hover {
+    background: #555;
+}
+
+/* MAIN CONTAINER */
 .container {
     background: white;
     padding: 25px;
-    margin: 60px auto;
+    margin: 40px auto;
     width: 320px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -34,6 +54,11 @@ input {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #4CAF50;
 }
 
 button {
@@ -64,4 +89,9 @@ button:hover {
     font-size: 12px;
     margin-top: 10px;
     color: #555;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
 }
